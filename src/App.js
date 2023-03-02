@@ -38,10 +38,11 @@ const App = () => {
 
   return (
     <div className="App">
-     <button className='random-btn' onClick={addRandomContact}>Add Random Contact</button>
+      <div className='buttons'>
+     <button className='random-btn' onClick={addRandomContact}>Add Actor</button>
      <button className='sortName-btn' onClick={sortName}>Sort Names</button>
      <button className='sortPopularity-btn' onClick={sortPopularity}>Sort Popularity</button>
-     
+     </div>
     <table className='table'>
       <thread>
         <tr>
@@ -61,8 +62,8 @@ const App = () => {
           </td>
           <td> {contact.name}</td>
           <td>{contact.popularity.toFixed(2)}</td>
-          <td>{contact.wonEmmy ? <img src= {OscarIcon} className='emmy' width={60} /> : '☒ '} </td>
-          <td>{contact.wonOscar ? <img src= {EmmyIcon} className='oscar' width={59}/> : '☒'}</td>
+          <td>{contact.wonEmmy ? <img src= {OscarIcon} className='award-icon' width={60} /> : '☒ '} </td>
+          <td>{contact.wonOscar ? <img src= {EmmyIcon} className='award-icon' width={59}/> : '☒'}</td>
 
           <button className='delete-btn' onClick={() => setContacts(prevContacts => prevContacts.filter(({id}) => id !== contact.id))} //added the destructured id before the comparison not after idiot ,35 mmin lost
           
