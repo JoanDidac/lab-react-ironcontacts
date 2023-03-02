@@ -14,12 +14,32 @@ const App = () => {
     const randomContact = extraContacts[random]; // --->>> NOTA: not a function idiot!! its an array!! hence random must go between [] brackets!! 90 minutes of lost time, FOCUS!!!
 
     setContacts(prevContacts => [...prevContacts, randomContact]);
-    setExtraContacts(prevContacts => prevContacts.filter(contact => contact.id !== randomContact.id));
+    setExtraContacts(prevContacts =>
+      prevContacts.filter(contact => contact.id !== randomContact.id));
+  }
+  const sortName = () => { 
+    setContacts(prevContacts => {
+    const sortedContacts = [...prevContacts].sort((a,b) => { //a.name.localCompare(b.name));setContacts(sortedContacts); NOT WORKING?! WHY 😤
+      if (a.name < b.name){
+        return -1;
+      } if (a.name > b.name) {
+        return 1;
+      }
+      return 0;
+    }) 
+    return sortedContacts;
+  })
+}
+  const sortPopularity = () => {
+    const sortedContacts = [...contacts].sort((a,b) => b.popularity - a.popularity);
+    setContacts(sortedContacts);
   }
 
   return (
     <div className="App">
      <button className='random-btn' onClick={addRandomContact}>Add Random Contact</button>
+     <button className='sortName-btn' onClick={sortName}>Sort Names</button>
+     <button className='sortPopularity-btn' onClick={sortPopularity}>Sort Popularity</button>
      
     <table className='table'>
       <thread>
