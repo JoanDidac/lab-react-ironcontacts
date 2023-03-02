@@ -29,12 +29,22 @@ thead {
 }
 
 th {
-  
+  margin-left: 50px;
   text-align: left;
   padding: 8px;
   background-color: silver;
   
 }
+
+.table-header {
+
+  width: 99%;
+  display: inline-flex;
+  gap: 5px;
+  justify-content: center;
+  margin-left: 60px;
+  
+} 
 
 td {
 

@@ -44,16 +44,17 @@ const App = () => {
      <button className='sortName-btn' onClick={sortName}>Sort Names</button>
      <button className='sortPopularity-btn' onClick={sortPopularity}>Sort Popularity</button>
      </div>
-    <table className='table'>
+    
       <thread>
-        <tr>
+        <tr className='table-header'>
           <th className='tableHeader'>Picture</th>
           <th className='tableHeader' >Name</th>
           <th className='tableHeader'>Popularity</th>
-          <th className='tableHeader'>Emmy</th>
           <th className='tableHeader'>Oscar</th>
+          <th className='tableHeader'>Emmy</th>
         </tr>
         </thread>
+        <table className='table'>
         <tbody>
         {contacts.map((contact)=>(
           <tr key={contact.id} >
