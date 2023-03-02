@@ -41,7 +41,7 @@ td {
   text-align: left;
   padding: 8px;
   border-bottom: 1px solid #ddd;
-  position: relative;
+ 
 }
 
 th:first-child, td:nth-child(1) {
@@ -145,11 +145,12 @@ th:last-child, td:last-child {
   border: none;
   border-radius: 5px;
   padding: 10px 15px;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: bold;
   transition: background-color 0.3s ease;
   height: 60px;
   margin-top: 50px;
+  width: 150px;
   
 }
 
@@ -157,6 +158,8 @@ th:last-child, td:last-child {
 .delete-btn:hover {
   background-color: #fb0400;
   text-transform: uppercase;
+  font-size: 15.5px;
+  box-shadow: 1px 1px 0px 1px #8a0000;
 }
 
 .delete-btn:active {
