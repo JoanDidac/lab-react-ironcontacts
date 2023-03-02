@@ -1,4 +1,5 @@
-
+import OscarIcon from './images/Oscar icon.png';
+import EmmyIcon from './images/Emmy icon.png';
 import './App.css';
 import contactsData from './contacts.json';
 import React, {useState} from 'react';
@@ -56,16 +57,22 @@ const App = () => {
           <tr key={contact.id} >
           <td>
             <img className='contactImg' src={contact.pictureUrl} alt={contact.name} width={100} /> 
-            {/* this width should be transferred to CSS */}
+            {/* this width should be transferred to CSS ? */}
           </td>
           <td> {contact.name}</td>
           <td>{contact.popularity.toFixed(2)}</td>
-          <td>{contact.wonEmmy ? '🏆' : '☒ '} </td>
-          <td>{contact.wonOscar ? '🏆' : '☒'}</td>
+          <td>{contact.wonEmmy ? <img src= {OscarIcon} className='emmy' width={60} /> : '☒ '} </td>
+          <td>{contact.wonOscar ? <img src= {EmmyIcon} className='oscar' width={59}/> : '☒'}</td>
+
+          <button className='delete-btn' onClick={() => setContacts(prevContacts => prevContacts.filter(({id}) => id !== contact.id))} //added the destructured id before the comparison not after idiot ,35 mmin lost
+          
+          >Delete Actor</button>
+          
           </tr>
          
 
         ))}
+
         </tbody>
     </table>
     </div>
