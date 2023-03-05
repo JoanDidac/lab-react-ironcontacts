@@ -55,6 +55,7 @@ const App = () => {
           <th className='tableHeader'>Popularity</th>
           <th className='tableHeader'>Oscar</th>
           <th className='tableHeader'>Emmy</th>
+          <th className='tableHeader'>Delete from Ranking</th>
         </tr>
         </thead>
         
@@ -71,9 +72,9 @@ const App = () => {
           <td>{contact.wonEmmy ? <img src= {OscarIcon} className='award-icon' width={60} /> : ' '} </td>
           <td>{contact.wonOscar ? <img src= {EmmyIcon} className='award-icon' width={59}/> : ' '}</td>
 
+          <td>
           <button className='delete-btn' onClick={() => setContacts(prevContacts => prevContacts.filter(({id}) => id !== contact.id))} //added the destructured id before the comparison not after idiot ,35 mmin lost
-          
-          >Delete Actor</button>
+          >Delete Actor</button></td>
           
           </tr>
          
