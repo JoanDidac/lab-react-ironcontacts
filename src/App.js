@@ -11,13 +11,15 @@ const App = () => {
   const [extraContacts, setExtraContacts] = useState(contactsData.slice(5))
 
   const addRandomContact = () => {
+    if (extraContacts.length > 0) {
     const random = Math.floor(Math.random() * extraContacts.length);
     const randomContact = extraContacts[random]; // --->>> NOTA: not a function idiot!! its an array!! hence random must go between [] brackets!! 90 minutes of lost time, FOCUS!!!
 
     setContacts(prevContacts => [...prevContacts, randomContact]);
     setExtraContacts(prevContacts =>
       prevContacts.filter(contact => contact.id !== randomContact.id));
-  }
+  } 
+};
   const sortName = () => { 
     setContacts(prevContacts => {
     const sortedContacts = [...prevContacts].sort((a,b) => { //a.name.localCompare(b.name));setContacts(sortedContacts); NOT WORKING?! WHY 😤
@@ -45,7 +47,8 @@ const App = () => {
      <button className='sortPopularity-btn' onClick={sortPopularity}>Sort Popularity</button>
      </div>
     
-      <thread>
+     <table className='table'>
+      <thead>
         <tr className='table-header'>
           <th className='tableHeader'>Picture</th>
           <th className='tableHeader' >Name</th>
@@ -53,8 +56,9 @@ const App = () => {
           <th className='tableHeader'>Oscar</th>
           <th className='tableHeader'>Emmy</th>
         </tr>
-        </thread>
-        <table className='table'>
+        </thead>
+        
+        
         <tbody>
         {contacts.map((contact)=>(
           <tr key={contact.id} >

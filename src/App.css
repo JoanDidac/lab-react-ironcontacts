@@ -24,7 +24,6 @@ table {
 }
 
 thead {
-  display: inline-flex;
   padding: 20px 20px;
 }
 
@@ -37,13 +36,8 @@ th {
 }
 
 .table-header {
-
-  width: 99%;
-  display: inline-flex;
-  gap: 5px;
-  justify-content: center;
-  margin-left: 60px;
-  
+  color: #ac100d;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 } 
 
 td {
@@ -53,19 +47,21 @@ td {
   border-bottom: 1px solid #ddd;
  
 }
-
-th:first-child, td:nth-child(1) {
+th:first-child,
+td:nth-child(1) {
   width: 30%;
 }
 
-th:nth-child(2), td:nth-child(2) {
+th:nth-child(2),
+td:nth-child(2) {
   width: 40%;
 }
 
-th:last-child, td:last-child {
+th:last-child,
+td:last-child {
   width: 30%;
-
 }
+
 .random-btn {
   margin-top: 50px;
   margin-bottom: 30px;
