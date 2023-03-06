@@ -83,6 +83,7 @@ const App = () => {
 
         </tbody>
     </table>
+    <footer className='footer' > <p> Created by U&D - All rights reserved. </p>  <p>ᕙ(⇀‸↼‶)ᕗ </p> </footer>
     </div>
   );
 }
